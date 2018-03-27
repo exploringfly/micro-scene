@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>可萌</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+		<!-- Link Swiper's CSS -->
+		<link rel="stylesheet" href="css/swiper.min.css">
+		<link rel="stylesheet" href="css/animate.min.css" />
+
+		<!--  styles -->
+		<style>
+			html,
+			body {
+				position: relative;
+				height: 100%;
+			}
+			
+			body {
+				background: #eee;
+				font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+				font-size: 14px;
+				color: #000;
+				margin: 0;
+				padding: 0;
+			}
+			
+			.swiper-container {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.swiper-slide {
+				text-align: center;
+				font-size: 18px;
+				background: #fff;
+				/* Center slide text vertically */
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: -webkit-flex;
+				display: flex;
+				-webkit-box-pack: center;
+				-ms-flex-pack: center;
+				-webkit-justify-content: center;
+				justify-content: center;
+				-webkit-box-align: center;
+				-ms-flex-align: center;
+				-webkit-align-items: center;
+				align-items: center;
+			}
+			/*第一屏开始*/
+			
+			.one {
+				position: relative;
+				background: url(img/timg.jpg) no-repeat;
+				background-size: 100% 100%;
+			}
+			
+			.music {
+				position: absolute;
+				top: 10px;
+				right: 10px;
+				z-index: 10;
+			}
+			
+			.music_img {
+				width: 60px;
+				animation: mus 2s linear infinite;
+			}
+			
+			@keyframes mus {
+				from {
+					transform: rotate(0deg);
+				}
+				to {
+					transform: rotate(360deg);
+				}
+			}
+			
+			.one_sofa {
+				width: 60%;
+				height: 50%;
+				position: absolute;
+				top: 10%;
+				border: 5px solid #fff;
+				overflow: hidden;
+			}
+			
+			.one_sofa>img {
+				width: 100%;
+			}
+			
+			.plane {
+				position: absolute;
+				width: 14%;
+				top: 15%;
+				right: 25%;
+				z-index: 10;
+			}
+			
+			.word {
+				width: 78%;
+				display: block;
+				position: absolute;
+			}
+			
+			.word1 {
+				top: 63%;
+			}
+			
+			.word2 {
+				top: 68%;
+			}
+			
+			.word3 {
+				top: 75%;
+			}
+			
+			.word4 {
+				bottom: 10%;
+			}
+			/*第一屏结束*/
+			/*第二屏开始*/
+			
+			.two {
+				position: relative;
+				background: url(img/timg5.jpg) no-repeat;
+				background-size: 100% 100%;
+			}
+			
+			.two_sofa {
+				width: 150px;
+				height: 150px;
+				position: absolute;
+				top: 13%;
+				left: 7%;
+				background: url(img/Mark.jpg);
+				background-size: 100% 100%;
+				border-radius: 50%;
+			}
+			
+			.pic {
+				width: 65%;
+				height: 40%;
+				position: absolute;
+				bottom: 5%;
+				right: 3%;
+			}
+			
+			.pic img {
+				width: 100%;
+			}
+			/*第二屏结束*/
+			/*第三屏开始*/
+			
+			.three {
+				position: relative;
+				background: url(img/timg4.jpg) no-repeat;
+				background-size: 100% 100%;
+			}
+			
+			.three_sofa {
+				position: absolute;
+				width: 50%;
+				height: 50%;
+				top: 20%;
+				left: 10%;
+			}
+			/*第三屏结束*/
+			/*第四屏开始*/
+			
+			.four {
+				position: relative;
+				background: url(img/timg8.jpg) no-repeat;
+				background-size: 100% 100%;
+			}
+			
+			.four_sofa {
+				position: absolute;
+				width: 60%;
+				height: 30%;
+				border: 3px solid #ffbfd0;
+				top: 10%;
+				left: 5%;
+				overflow: hidden;
+			}
+			
+			.four_sofa img {
+				width: 100%;
+			}
+			/*第四屏结束*/
+			/*第五屏开始*/
+			
+			.five {
+				position: relative;
+				background: url(img/timg9.jpg) no-repeat;
+				background-size: 100% 100%;
+			}
+			
+			.five_sofa {
+				position: absolute;
+				width: 70%;
+				height: 20%;
+				top: 10%;
+				left: 20%;
+			}
+			
+			.five_sofa img {
+				width: 100%;
+			}
+			
+			.five>img {
+				position: absolute;
+				top: 42%;
+			}
+			/*第五屏结束*/
+			/*第六屏开始*/
+			
+			.six {
+				position: relative;
+				background: url(img/timg6.jpg) no-repeat;
+				background-size: 100% 100%;
+			}
+			
+			.six_sofa {
+				position: absolute;
+				width: 100%;
+				height: 50%;
+				top: 40%;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+			/*第六屏结束*/
+		</style>
+		<script>
+			window.onload = function() {
+				var musi = document.getElementsByClassName("music_img")[0];
+				var aud = document.getElementsByClassName("aud")[0];
+				var mic = 1;
+				musi.onclick = function() {
+					if(mic == 1) {
+						musi.style.animation = "none";
+						aud.pause();
+						mic = 2;
+					} else {
+						musi.style.animation = " mus 2s linear infinite";
+						mic = 1;
+						aud.play();
+					}
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<!-- Swiper -->
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide one">
+					<div class="one_sofa ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0.3s">
+						<img src="img/timgmorning.jpg" alt="" />
+					</div>
+					<img src="img/plane1.png" alt="" class="plane ani" swiper-animate-effect="zoomIn" swiper-animate-duration="1s" swiper-animate-delay="1.3s" />
+					<img src="img/1zaoan.png" class="word word1 ani" swiper-animate-effect="slideInLeft" swiper-animate-duration="1s" swiper-animate-delay="2.3s" />
+					<img src="img/2dream.png" class="word word2 ani" swiper-animate-effect="slideInRight" swiper-animate-duration="1s" swiper-animate-delay="3.3s" />
+					<img src="img/3love.png" class="word word3 ani" swiper-animate-effect="slideInLeft" swiper-animate-duration="1s" swiper-animate-delay="4.3s" />
+					<img src="img/GOOD.png" class="word word4 ani" swiper-animate-effect="rubberBand" swiper-animate-duration="1s" swiper-animate-delay="5.3s" />
+				</div>
+				<div class="swiper-slide two">
+					<div class="two_sofa ani" swiper-animate-effect="zoomInDown " swiper-animate-duration="1s" swiper-animate-delay="0.3s"></div>
+					<div class="pic ani" swiper-animate-effect="zoomInDown " swiper-animate-duration="1s" swiper-animate-delay="1.3s">
+						<img src="img/word.png" alt="" class="wo_pic2 ani" swiper-animate-effect="bounceInUp" swiper-animate-duration="1s" swiper-animate-delay="2.3s" />
+					</div>
+				</div>
+				<div class="swiper-slide three">
+					<div class="three_sofa">
+						<img src="img/three_word.png" alt="" class="ani" swiper-animate-effect="shake" swiper-animate-duration="1s" swiper-animate-delay="0.3s" />
+					</div>
+				</div>
+				<div class="swiper-slide four">
+					<div class="four_sofa ani" swiper-animate-effect="flash" swiper-animate-duration="1s" swiper-animate-delay="0.3s">
+						<img src="img/girl.png" alt="" class="ani" swiper-animate-effect="pulse" swiper-animate-duration="1s" swiper-animate-delay="1.3s" />
+					</div>
+				</div>
+				<div class="swiper-slide five">
+					<div class="five_sofa">
+						<img src="img/girlfly.png" alt="" class="ani" swiper-animate-effect="slideInRight" swiper-animate-duration="1s" swiper-animate-delay="0.3s" />
+					</div>
+					<img src="img/tom.png" alt="" class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="1s" swiper-animate-delay="1.3s" />
+				</div>
+				<div class="swiper-slide six">
+					<div class="six_sofa">
+						<img src="img/yangzi.png" alt="" class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="1s" swiper-animate-delay="0.3s" />
+					</div>
+				</div>
+			</div>
+			<!--音乐符号开始-->
+			<div class="music">
+				<img src="img/music.png" class="music_img" />
+			</div>
+			<!--音乐符号结束-->
+			<!--音乐播放开始-->
+			<audio src="vedio/iloveu.mp3" loop="loop" preload="auto" autoplay="autoplay"></audio>
+			<!--音乐播放结束-->
+
+			<!-- Add Pagination -->
+			<div class="swiper-pagination"></div>
+		</div>
+
+		<!-- Swiper JS -->
+		<script src="js/swiper.min.js"></script>
+		<script src="js/swiper.animate1.0.3.min.js"></script>
+
+		<!-- Initialize Swiper -->
+		<script>
+			var swiper = new Swiper('.swiper-container', {
+				pagination: '.swiper-pagination',
+				paginationClickable: true,
+				direction: 'vertical',
+				onInit: function(swiper) { //Swiper2.x的初始化是onFirstInit
+					swiperAnimateCache(swiper); //隐藏动画元素
+					swiperAnimate(swiper); //初始化完成开始动画
+				},
+				onSlideChangeEnd: function(swiper) {
+					swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+				}
+			});
+		</script>
+	</body>
+
+</html>
