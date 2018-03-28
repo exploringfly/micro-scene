@@ -236,14 +236,14 @@
 		</style>
 		<script>
 			window.onload = function() {
-				var musi = document.getElementsByClassName("music_img")[0];
-				var aud = document.getElementsByClassName("aud")[0];
-				var mic = 1;
+				var musi = document.getElementsByClassName("music_img")[0],
+					mic = 1,
+					aud = document.getElementById('aud');
 				musi.onclick = function() {
 					if(mic == 1) {
 						musi.style.animation = "none";
-						aud.pause();
 						mic = 2;
+						aud.pause();
 					} else {
 						musi.style.animation = " mus 2s linear infinite";
 						mic = 1;
@@ -302,7 +302,7 @@
 			</div>
 			<!--音乐符号结束-->
 			<!--音乐播放开始-->
-			<audio src="vedio/iloveu.mp3" loop="loop" class="aud" preload="auto" autoplay="autoplay"></audio>
+			<audio src="vedio/iloveu.mp3" id="aud" loop="loop" preload="auto" autoplay="autoplay"></audio>
 			<!--音乐播放结束-->
 
 			<!-- Add Pagination -->
