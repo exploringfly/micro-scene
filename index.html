@@ -241,11 +241,11 @@
 					aud = document.getElementById('aud');
 				musi.onclick = function() {
 					if(mic == 1) {
-						musi.style.animation = "none";
+						musi.style.animationPlayState = "paused";
 						mic = 2;
 						aud.pause();
 					} else {
-						musi.style.animation = " mus 2s linear infinite";
+						musi.style.animationPlayState = "running";
 						mic = 1;
 						aud.play();
 					}
